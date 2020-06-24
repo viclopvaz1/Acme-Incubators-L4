@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- - sample-data.xml - - Copyright (c) 2019 Rafael Corchuelo. - - In keeping with the traditional purpose of furthering education and 
+	research, it is - the policy of the copyright owner to permit non-commercial use and redistribution of - this software. It has been tested 
+	carefully, but it is not guaranteed for any particular - purposes. The copyright owner does not offer any warranties or representations, 
+	nor do - they accept any liabilities with respect to them. -->
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<import resource="conversion-service.xml" />
+	
+	<bean id="configuration01" class="acme.entities.configurations.Configuration">
+		<property name="spamWords" value=" viagra, sex, 
+			cialis, hard_core, cialis, nigeria, you’ve won, million dollar, 
+				millon de dolares, has ganado, explícito, sexo"></property> 
+		<property name="spamThreshold" value="2.50"/>
+		<property name="sectors" value="Technology, Science, Arts, Business"></property> 
+	</bean>
+	
+	<bean name="banner01" class="acme.entities.banners.Banner">
+		<property name="picture" value="https://sevilla.abc.es/deportes/alfinaldelapalmera/wp-content/uploads/2018/06/Mividabetis.jpg" />
+		<property name="slogan" value="Yo soy del betis" />
+		<property name="targetUrl" value="https://www.realbetisbalompie.es/" />
+		<property name="finalMode" value="false" />
+	</bean>
+	
+	<bean name="banner02" class="acme.entities.banners.Banner">
+		<property name="picture" value="https://sevilla.abc.es/deportes/alfinaldelapalmera/wp-content/uploads/2018/06/Mividabetis.jpg" />
+		<property name="slogan" value="Yo soy del betis también" />
+		<property name="targetUrl" value="https://www.realbetisbalompie.es/" />
+		<property name="finalMode" value="true" />
+		<property name="numCreditCard" value="1" />
+	</bean>
+	
+	<bean name="creditcard01" class="acme.entities.creditcards.CreditCard">
+		<property name="holderName" value="Cordon" />
+		<property name="number" value="4294939855393654" />
+		<property name="brand" value="Pizza" />
+		<property name="monthExp" value="2" />
+		<property name="yearExp" value="2021" />
+		<property name="cvv" value="021"/>
+		<property name="banner" ref="banner02" />
+	</bean>
+	
+	<bean name="technologyrecord01" class="acme.entities.technologyrecords.TechnologyRecord">
+		<property name="title" value="Sample Technology 01" />
+		<property name="sector" value="Tecnology" />
+		<property name="name" value="Vicente Lopez" />
+		<property name="description" value="This is a example" />
+		<property name="web" value="https://www.abandomoviez.net" />
+		<property name="email" value="vicente@correo.com" />
+		<property name="indication" value="true" />
+		<property name="star" value="5" />
+	</bean>
+
+	<bean name="technologyrecord02" class="acme.entities.technologyrecords.TechnologyRecord">
+		<property name="title" value="Sample Technology 02" />
+		<property name="sector" value="Example 2" />
+		<property name="name" value="Alberto Cordon" />
+		<property name="description" value="This is a example" />
+		<property name="web" value="https://twitter.com" />
+		<property name="email" value="alberto@correo.com" />
+		<property name="indication" value="true" />
+		<property name="star" value="2" />
+	</bean>
+
+	<bean name="technologyrecord03" class="acme.entities.technologyrecords.TechnologyRecord">
+		<property name="title" value="Sample Technology 03" />
+		<property name="sector" value="Example 3" />
+		<property name="name" value="Jose Ruiz" />
+		<property name="description" value="This is a example" />
+		<property name="web" value="https://www.youtube.com" />
+		<property name="email" value="jose@correo.com" />
+		<property name="indication" value="true" />
+		<property name="star" value="-3" />
+	</bean>
+	
+	<bean name="technologyrecord04" class="acme.entities.technologyrecords.TechnologyRecord">
+		<property name="title" value="Sample Technology 04" />
+		<property name="sector" value="Example 3" />
+		<property name="name" value="Jose Ruiz" />
+		<property name="description" value="This is a example" />
+		<property name="web" value="https://www.youtube.com" />
+		<property name="email" value="jose2@correo.com" />
+		<property name="indication" value="false" />
+		<property name="star" value="0" />
+	</bean>
+
+	<bean id="notice01" class="acme.entities.notices.Notice">
+		<property name="header" value="https://i.blogs.es/594843/chrome/450_1000.jpg" />
+		<property name="creationMoment" value="2020/04/01 10:35" />
+		<property name="deadline" value="2020/12/01 10:35" />
+		<property name="body" value="This is a example" />
+		<property name="link" value="https://elcorreoweb.es/sevilla/previstos-avisos-amarillos-por-tormentas-en-sevilla-AD6621705" />
+		<property name="finalMode" value="false" />
+	</bean>
+	
+	<bean id="notice02" class="acme.entities.notices.Notice">
+		<property name="header" value="https://www.tuexperto.com/wp-content/uploads/2019/12/imagenes-espacio-2.jpg.webp" />
+		<property name="creationMoment" value="2020/04/01 10:35" />
+		<property name="deadline" value="2020/12/01 10:35" />
+		<property name="body" value="This is a example" />
+		<property name="link" value="https://elcorreoweb.es/sevilla/previstos-avisos-amarillos-por-tormentas-en-sevilla-AD6621705" />
+		<property name="finalMode" value="false" />
+	</bean>
+	
+	<bean id="notice03" class="acme.entities.notices.Notice">
+		<property name="header" value="https://ep01.epimg.net/elpais/imagenes/2019/10/30/album/1572424649_614672_1572453030_noticia_normal.jpg" />
+		<property name="creationMoment" value="2020/05/24 10:35" />
+		<property name="deadline" value="2020/12/01 10:35" />
+		<property name="body" value="This is a example" />
+		<property name="link" value="https://www.tussam.es/es/avisos-generales" />
+		<property name="finalMode" value="false" />
+	</bean>
+	
+	<bean id="notice04" class="acme.entities.notices.Notice">
+		<property name="header" value="https://ep01.epimg.net/elpais/imagenes/2019/10/30/album/1572424649_614672_1572453030_noticia_normal.jpg" />
+		<property name="creationMoment" value="2020/05/24 10:35" />
+		<property name="deadline" value="2019/12/01 10:35" />
+		<property name="body" value="This is a example" />
+		<property name="link" value="https://www.tussam.es/es/avisos-generales" />
+		<property name="finalMode" value="false" />	
+	</bean>
+
+	<bean name="toolrecord01" class="acme.entities.toolrecords.ToolRecord">
+		<property name="title" value="Sample Tool Record 01" />
+		<property name="sector" value="Example 1" />
+		<property name="name" value="Alberto Cordon" />
+		<property name="description" value="This is a example" />
+		<property name="web" value="https://www.abandomoviez.net" />
+		<property name="email" value="alberto@correo.com" />
+		<property name="indication" value="true" />
+		<property name="star" value="4" />
+	</bean>
+
+	<bean name="toolrecord02" class="acme.entities.toolrecords.ToolRecord">
+		<property name="title" value="Sample Tool Record 02" />
+		<property name="sector" value="Example 2" />
+		<property name="name" value="Jose Ruiz" />
+		<property name="description" value="This is a example" />
+		<property name="web" value="https://www.youtube.com" />
+		<property name="email" value="jose@correo.com" />
+		<property name="indication" value="true" />
+		<property name="star" value="0" />
+	</bean>
+
+	<bean name="toolrecord03" class="acme.entities.toolrecords.ToolRecord">
+		<property name="title" value="Sample Tool Record 03" />
+		<property name="sector" value="Example 3" />
+		<property name="name" value="Vicente Lopez" />
+		<property name="description" value="This is a example" />
+		<property name="web" value="https://twitter.com" />
+		<property name="email" value="vicente@correo.com" />
+		<property name="indication" value="false" />
+		<property name="star" value="-5" />
+	</bean>
+
+	<bean id="Inquirie01" class="acme.entities.inquiries.Inquirie">
+		<property name="title" value="Consulta 1" />
+		<property name="creationMoment" value="2020/04/01 10:35" />
+		<property name="deadline" value="2020/12/01 10:35" />
+		<property name="description" value="This is a example" />
+		<property name="maxMoney" value="600.0€" />
+		<property name="minMoney" value="300.0€" />
+		<property name="email" value="aprobado@hotmail.com" />
+	</bean>
+
+	<bean id="Inquirie02" class="acme.entities.inquiries.Inquirie">
+		<property name="title" value="Consulta 2" />
+		<property name="creationMoment" value="2020/04/01 10:35" />
+		<property name="deadline" value="2020/12/01 10:35" />
+		<property name="description" value="This is a example" />
+		<property name="maxMoney" value="700.0€" />
+		<property name="minMoney" value="300.0€" />
+		<property name="email" value="aprobado2@hotmail.com" />
+
+	</bean>
+
+	<bean id="Overture01" class="acme.entities.overtures.Overture">
+		<property name="title" value="Propuesta 1" />
+		<property name="creationMoment" value="2020/04/01 10:35" />
+		<property name="deadline" value="2020/12/01 10:35" />
+		<property name="description" value="This is a example" />
+		<property name="maxMoney" value="700.0€" />
+		<property name="minMoney" value="300.0€" />
+		<property name="email" value="aprobado2@hotmail.com" />
+
+	</bean>
+
+	<bean id="Overture02" class="acme.entities.overtures.Overture">
+		<property name="title" value="Propuesta 2" />
+		<property name="creationMoment" value="2020/04/01 10:35" />
+		<property name="deadline" value="2020/12/01 10:35" />
+		<property name="description" value="This is a example" />
+		<property name="maxMoney" value="700.0€" />
+		<property name="minMoney" value="300.0€" />
+		<property name="email" value="aprobado2@hotmail.com" />
+
+	</bean>
+
+
+	<bean id="Challenge01" class="acme.entities.challenges.Challenge">
+		<property name="title" value="Desafio 1 " />
+		<property name="rookieGoal" value="400.0€" />
+		<property name="deadline" value="2020/12/01 10:35" />
+		<property name="description" value="This is a example" />
+		<property name="averageGoal" value="700.0€" />
+		<property name="expertGoal" value="300.0€" />
+		<property name="rookieReward" value="300.0€" />
+		<property name="averageReward" value="1500.0€" />
+		<property name="expertReward" value="300.0€" />
+
+	</bean>
+
+
+	<bean id="Challenge02" class="acme.entities.challenges.Challenge">
+		<property name="title" value="Desafio 2" />
+		<property name="rookieGoal" value="400.0€" />
+		<property name="deadline" value="2020/12/01 10:35" />
+		<property name="description" value="This is a example" />
+		<property name="averageGoal" value="700.0€" />
+		<property name="expertGoal" value="300.0€" />
+		<property name="rookieReward" value="200.0€" />
+		<property name="averageReward" value="1500.0€" />
+		<property name="expertReward" value="300.0€" />
+	</bean>
+</beans>

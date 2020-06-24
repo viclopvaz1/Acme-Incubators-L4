@@ -1,0 +1,25 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.credit-card.label.holderName = Nombre del titular:
+administrator.credit-card.label.number = Numero:
+administrator.credit-card.label.brand = Compañia:
+administrator.credit-card.label.monthExp = Mes Caducidad:
+administrator.credit-card.label.yearExp = Año Caducidad:
+administrator.credit-card.label.cvv = CVV:
+
+administrator.credit-card.form.button.return = Volver
+
+administrator.credit-card.form.buttom.create = Crear
+administrator.credit-card.form.buttom.update = Actualizar
+administrator.credit-card.form.buttom.delete = Borrar
+
+administrator.credit-card.form.error.monthExp = El mes de caducidad debe ser mayor o igual al mes actual, si es el mismo año.
+administrator.credit-card.form.error.yearExp = El año de caducidad debe ser mayor o igual al año actual.

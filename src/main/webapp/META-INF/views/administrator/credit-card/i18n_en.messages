@@ -1,0 +1,25 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.credit-card.label.holderName = Holder Name:
+administrator.credit-card.label.number = Number:
+administrator.credit-card.label.brand = Brand:
+administrator.credit-card.label.monthExp = Month Exp:
+administrator.credit-card.label.yearExp = Year Exp:
+administrator.credit-card.label.cvv = CVV:
+
+administrator.credit-card.form.button.return = Return
+
+administrator.credit-card.form.buttom.create = Create
+administrator.credit-card.form.buttom.update = Update
+administrator.credit-card.form.buttom.delete = Delete
+
+administrator.credit-card.form.error.monthExp = The Month Expire must be greater than or equal to the current month, if it is the same year.
+administrator.credit-card.form.error.yearExp = The Year Month must be greater than or equal to the current year.
