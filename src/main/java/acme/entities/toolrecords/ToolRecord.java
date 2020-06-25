@@ -1,6 +1,7 @@
 
 package acme.entities.toolrecords;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -29,6 +30,7 @@ public class ToolRecord extends DomainEntity {
 	private String				name;
 
 	@NotBlank
+	@Column(length = 1024)
 	private String				description;
 
 	@URL

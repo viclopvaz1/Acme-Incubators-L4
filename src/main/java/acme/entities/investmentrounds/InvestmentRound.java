@@ -1,18 +1,21 @@
 
-package acme.entities.inquiries;
+package acme.entities.investmentrounds;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 
+import org.hibernate.validator.constraints.URL;
+
+import acme.components.Round;
+import acme.entities.roles.Entrepreneur;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -21,21 +24,22 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Inquirie extends DomainEntity {
+public class InvestmentRound extends DomainEntity {
 
 	public static final long	serialVersionUID	= 1L;
 
 	@NotBlank
-	private String				title;
+	private String				ticker;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
 	@NotNull
 	private Date				creationMoment;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	private Date				deadline;
+	private Round				round;
+
+	@NotBlank
+	private String				title;
 
 	@NotBlank
 	@Column(length = 1024)
@@ -43,14 +47,14 @@ public class Inquirie extends DomainEntity {
 
 	@Valid
 	@NotNull
-	private Money				maxMoney;
+	private Money				amountMoney;
 
-	@Valid
+	@URL
+	private String				moreInfo;
+
 	@NotNull
-	private Money				minMoney;
-
-	@Email
-	@NotBlank
-	private String				email;
+	@Valid
+	@ManyToOne(optional = false)
+	private Entrepreneur		entrepreneur;
 
 }

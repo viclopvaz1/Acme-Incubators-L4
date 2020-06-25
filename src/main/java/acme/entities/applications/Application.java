@@ -1,18 +1,17 @@
 
-package acme.entities.inquiries;
+package acme.entities.applications;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 
+import acme.entities.roles.Investor;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -21,36 +20,27 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Inquirie extends DomainEntity {
+public class Application extends DomainEntity {
 
 	public static final long	serialVersionUID	= 1L;
 
 	@NotBlank
-	private String				title;
+	private String				ticker;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Past
 	@NotNull
 	private Date				creationMoment;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	private Date				deadline;
-
 	@NotBlank
-	@Column(length = 1024)
-	private String				description;
+	private String				statement;
 
 	@Valid
 	@NotNull
-	private Money				maxMoney;
+	private Money				moneyOffer;
 
-	@Valid
 	@NotNull
-	private Money				minMoney;
-
-	@Email
-	@NotBlank
-	private String				email;
+	@Valid
+	@ManyToOne(optional = false)
+	private Investor			investor;
 
 }
