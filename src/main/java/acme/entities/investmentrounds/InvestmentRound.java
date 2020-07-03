@@ -45,6 +45,8 @@ public class InvestmentRound extends DomainEntity {
 	@Column(length = 1024)
 	private String				description;
 
+	public boolean				status;
+
 	@Valid
 	@NotNull
 	private Money				amountMoney;

@@ -10,23 +10,23 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.inquirie;
+package acme.features.authenticated.investmentround;
 
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.inquiries.Inquirie;
+import acme.entities.investmentrounds.InvestmentRound;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuthenticatedInquirieRepository extends AbstractRepository {
+public interface AuthenticatedInvestmentRoundRepository extends AbstractRepository {
 
-	@Query("select i from Inquirie i where i.id = ?1")
-	Inquirie findOneById(int id);
+	@Query("select i from InvestmentRound i where i.id = ?1")
+	InvestmentRound findOneById(int id);
 
-	@Query("select i from Inquirie i where i.creationMoment > CURRENT_TIMESTAMP")
-	Collection<Inquirie> findMany();
+	@Query("select i from InvestmentRound i where i.status =1")
+	Collection<InvestmentRound> findMany();
 
 }

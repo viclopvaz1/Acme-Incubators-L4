@@ -9,42 +9,45 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<import resource="conversion-service.xml" />
-	
+
 	<bean id="configuration01" class="acme.entities.configurations.Configuration">
-		<property name="spamWords" value=" viagra, sex, 
+		<property name="spamWords"
+			value=" viagra, sex, 
 			cialis, hard_core, cialis, nigeria, you’ve won, million dollar, 
-				millon de dolares, has ganado, explícito, sexo"></property> 
-		<property name="spamThreshold" value="2.50"/>
-		<property name="sectors" value="Technology, Science, Arts, Business"></property> 
+				millon de dolares, has ganado, explícito, sexo"></property>
+		<property name="spamThreshold" value="2.50" />
+		<property name="sectors" value="Technology, Science, Arts, Business"></property>
 	</bean>
-	
+
 	<bean name="banner01" class="acme.entities.banners.Banner">
-		<property name="picture" value="https://sevilla.abc.es/deportes/alfinaldelapalmera/wp-content/uploads/2018/06/Mividabetis.jpg" />
+		<property name="picture"
+			value="https://sevilla.abc.es/deportes/alfinaldelapalmera/wp-content/uploads/2018/06/Mividabetis.jpg" />
 		<property name="slogan" value="Yo soy del betis" />
 		<property name="targetUrl" value="https://www.realbetisbalompie.es/" />
 		<property name="finalMode" value="false" />
 		<property name="patron" ref="patron1Patron" />
 	</bean>
-	
+
 	<bean name="banner02" class="acme.entities.banners.Banner">
-		<property name="picture" value="https://sevilla.abc.es/deportes/alfinaldelapalmera/wp-content/uploads/2018/06/Mividabetis.jpg" />
+		<property name="picture"
+			value="https://sevilla.abc.es/deportes/alfinaldelapalmera/wp-content/uploads/2018/06/Mividabetis.jpg" />
 		<property name="slogan" value="Yo soy del betis también" />
 		<property name="targetUrl" value="https://www.realbetisbalompie.es/" />
 		<property name="finalMode" value="true" />
 		<property name="numCreditCard" value="1" />
 		<property name="patron" ref="patron1Patron" />
 	</bean>
-	
+
 	<bean name="creditcard01" class="acme.entities.creditcards.CreditCard">
 		<property name="holderName" value="Cordon" />
 		<property name="number" value="4294939855393654" />
 		<property name="brand" value="Pizza" />
 		<property name="monthExp" value="2" />
 		<property name="yearExp" value="2021" />
-		<property name="cvv" value="021"/>
+		<property name="cvv" value="021" />
 		<property name="banner" ref="banner02" />
 	</bean>
-	
+
 	<bean name="technologyrecord01" class="acme.entities.technologyrecords.TechnologyRecord">
 		<property name="title" value="Sample Technology 01" />
 		<property name="sector" value="Tecnology" />
@@ -77,7 +80,7 @@
 		<property name="indication" value="true" />
 		<property name="star" value="-3" />
 	</bean>
-	
+
 	<bean name="technologyrecord04" class="acme.entities.technologyrecords.TechnologyRecord">
 		<property name="title" value="Sample Technology 04" />
 		<property name="sector" value="Example 3" />
@@ -94,35 +97,39 @@
 		<property name="creationMoment" value="2020/04/01 10:35" />
 		<property name="deadline" value="2020/12/01 10:35" />
 		<property name="body" value="This is a example" />
-		<property name="link" value="https://elcorreoweb.es/sevilla/previstos-avisos-amarillos-por-tormentas-en-sevilla-AD6621705" />
+		<property name="link"
+			value="https://elcorreoweb.es/sevilla/previstos-avisos-amarillos-por-tormentas-en-sevilla-AD6621705" />
 		<property name="finalMode" value="false" />
 	</bean>
-	
+
 	<bean id="notice02" class="acme.entities.notices.Notice">
 		<property name="header" value="https://www.tuexperto.com/wp-content/uploads/2019/12/imagenes-espacio-2.jpg.webp" />
 		<property name="creationMoment" value="2020/04/01 10:35" />
 		<property name="deadline" value="2020/12/01 10:35" />
 		<property name="body" value="This is a example" />
-		<property name="link" value="https://elcorreoweb.es/sevilla/previstos-avisos-amarillos-por-tormentas-en-sevilla-AD6621705" />
+		<property name="link"
+			value="https://elcorreoweb.es/sevilla/previstos-avisos-amarillos-por-tormentas-en-sevilla-AD6621705" />
 		<property name="finalMode" value="false" />
 	</bean>
-	
+
 	<bean id="notice03" class="acme.entities.notices.Notice">
-		<property name="header" value="https://ep01.epimg.net/elpais/imagenes/2019/10/30/album/1572424649_614672_1572453030_noticia_normal.jpg" />
+		<property name="header"
+			value="https://ep01.epimg.net/elpais/imagenes/2019/10/30/album/1572424649_614672_1572453030_noticia_normal.jpg" />
 		<property name="creationMoment" value="2020/05/24 10:35" />
 		<property name="deadline" value="2020/12/01 10:35" />
 		<property name="body" value="This is a example" />
 		<property name="link" value="https://www.tussam.es/es/avisos-generales" />
 		<property name="finalMode" value="false" />
 	</bean>
-	
+
 	<bean id="notice04" class="acme.entities.notices.Notice">
-		<property name="header" value="https://ep01.epimg.net/elpais/imagenes/2019/10/30/album/1572424649_614672_1572453030_noticia_normal.jpg" />
+		<property name="header"
+			value="https://ep01.epimg.net/elpais/imagenes/2019/10/30/album/1572424649_614672_1572453030_noticia_normal.jpg" />
 		<property name="creationMoment" value="2020/05/24 10:35" />
 		<property name="deadline" value="2019/12/01 10:35" />
 		<property name="body" value="This is a example" />
 		<property name="link" value="https://www.tussam.es/es/avisos-generales" />
-		<property name="finalMode" value="false" />	
+		<property name="finalMode" value="false" />
 	</bean>
 
 	<bean name="toolrecord01" class="acme.entities.toolrecords.ToolRecord">
@@ -227,7 +234,7 @@
 		<property name="averageReward" value="1500.0€" />
 		<property name="expertReward" value="300.0€" />
 	</bean>
-	
+
 	<bean name="entrepreneur1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="entrepreneur1" />
 		<property name="password" value="entrepreneur1" />
@@ -258,7 +265,7 @@
 	<bean name="entrepreneur1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="entrepreneur1UserAccount" />
 	</bean>
-	
+
 	<bean name="entrepreneur2UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="entrepreneur2" />
 		<property name="password" value="entrepreneur2" />
@@ -289,7 +296,7 @@
 	<bean name="entrepreneur2Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="entrepreneur2UserAccount" />
 	</bean>
-	
+
 	<bean name="investor1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="investor1" />
 		<property name="password" value="investor1" />
@@ -349,7 +356,7 @@
 	<bean name="investor2Authenticathed" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="investor2UserAccount" />
 	</bean>
-	
+
 	<bean name="bookkeeper1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="bookkeeper1" />
 		<property name="password" value="bookkeeper1" />
@@ -407,7 +414,7 @@
 	<bean name="bookkeeper2Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="bookkeeper2UserAccount" />
 	</bean>
-	
+
 	<bean name="patron1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="patron1" />
 		<property name="password" value="patron1" />
@@ -463,4 +470,45 @@
 	<bean name="patron2Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="patron2UserAccount" />
 	</bean>
+
+<bean name="investmentRound01" class="acme.entities.investmentrounds.InvestmentRound">
+        <property name="ticker" value="SEC-20-000000" />
+        <property name="creationMoment" value="2020/06/06 00:00" />
+        <property name="round" value="SEED" />
+        <property name="title" value="Title 1" />
+        <property name="description" value="This is a 1st example" />
+        <property name="amountMoney" value="€ 400" />
+        <property name="moreInfo" value="http://www.exampleone.com/" />
+        <property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
+        		<property name="status" value="false" />
+            </bean>
+        <bean name="investmentRound02" class="acme.entities.investmentrounds.InvestmentRound">
+        <property name="ticker" value="SEC-20-000000" />
+        <property name="creationMoment" value="2020/06/06 00:00" />
+        <property name="round" value="SERIESA" />
+        <property name="title" value="Title 1" />
+        <property name="description" value="This is a 1st example" />
+        <property name="amountMoney" value="€ 400" />
+        <property name="moreInfo" value="http://www.exampleone.com/" />
+        <property name="entrepreneur" ref="entrepreneur2Entrepreneur" />
+        		<property name="status" value="true" />
+    </bean>
+
+
+<bean name="application1" class="acme.entities.applications.Application">
+        <property name="ticker" value="SEC-20-000000" />
+        <property name="creationMoment" value="2019/12/01 10:00" />
+        <property name="statement" value="no contempla" />
+        <property name="moneyOffer" value="€ 400" />
+        <property name="investor" ref="investor1Investor" />
+    </bean>
+
+    <bean name="application2" class="acme.entities.applications.Application">
+        <property name="ticker" value="SEC-20-000001" />
+        <property name="creationMoment" value="2019/12/01 10:00" />
+        <property name="statement" value="sin especificacion" />
+        <property name="moneyOffer" value="€ 400" />
+        <property name="investor" ref="investor2Investor" />
+    </bean>
+
 </beans>

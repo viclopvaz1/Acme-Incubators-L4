@@ -30,7 +30,7 @@ public class AuthenticatedInquirieShowService implements AbstractShowService<Aut
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "description", "creationMoment", "deadline", "maxMoney", "minMoney", "email");
+		request.unbind(entity, model, "title", "description", "creationMoment", "maxMoney", "minMoney", "email");
 	}
 
 	@Override

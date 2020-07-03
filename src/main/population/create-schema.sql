@@ -148,6 +148,7 @@
         `description` varchar(1024),
         `more_info` varchar(255),
         `round` integer,
+        `status` bit not null,
         `ticker` varchar(255),
         `title` varchar(255),
         `entrepreneur_id` integer not null,
