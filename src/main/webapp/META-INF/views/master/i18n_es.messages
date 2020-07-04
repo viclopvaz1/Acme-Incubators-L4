@@ -46,6 +46,12 @@ master.menu.anonymous.list-notice = Lista de Avisos
 master.menu.anonymous.list-technology-record = Lista de Registro de Tecnologia
 master.menu.anonymous.list-tool-record = Lista de Registro de Herramienta
 
+
+# master.menu.patron #######################################################
+master.menu.patron = Patron
+master.menu.patron.banner = Lista de Banner 
+
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador

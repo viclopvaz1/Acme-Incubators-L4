@@ -25,4 +25,10 @@ public class Dashboard implements Serializable {
 
 	Double						totalTechnologies;
 
+	Double						totalApplications;
+
+	Collection<Object[]>		ratioOfInvestmentRoundsGroupedByKind;
+
+	Collection<Object[]>		ratioOfApplicationsGroupedByStatus;
+
 }
