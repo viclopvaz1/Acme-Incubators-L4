@@ -11,10 +11,10 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.URL;
 
-import acme.components.Round;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -35,8 +35,9 @@ public class InvestmentRound extends DomainEntity {
 	@NotNull
 	private Date				creationMoment;
 
-	@NotNull
-	private Round				round;
+	@NotBlank
+	@Pattern(regexp = ".*\\b(SEED|ANGEL|SERIESA|SERIESB|SERIESC|BRIDGE)\\b.*")
+	private String				round;
 
 	@NotBlank
 	private String				title;
@@ -44,6 +45,8 @@ public class InvestmentRound extends DomainEntity {
 	@NotBlank
 	@Column(length = 1024)
 	private String				description;
+
+	public boolean				status;
 
 	@Valid
 	@NotNull

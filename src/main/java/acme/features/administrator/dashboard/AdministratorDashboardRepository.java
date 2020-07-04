@@ -29,4 +29,13 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(a) from TechnologyRecord a")
 	Double totalTechnologies();
 
+	@Query("select count(a) from Application a")
+	Double totalApplications();
+
+	@Query("select round, count(a) from InvestmentRound a group by a.round")
+	Collection<Object[]> ratioOfInvestmentRoundsGroupedByKind();
+
+	@Query("select status, count(a) from Application a group by a.status")
+	Collection<Object[]> ratioOfApplicationsGroupedByStatus();
+
 }

@@ -13,6 +13,10 @@
 
     alter table `application` 
        drop 
+       foreign key `FKk5ibe41quxsif8im882xv4afo`;
+
+    alter table `application` 
+       drop 
        foreign key `FKl4fp0cd8c008ma79n6w58xhk9`;
 
     alter table `authenticated` 
