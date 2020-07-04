@@ -1,5 +1,5 @@
 /*
- * AuthenticatedProviderRepository.java
+ * EntrepreneurProviderRepository.java
  *
  * Copyright (c) 2019 Rafael Corchuelo.
  *
@@ -10,23 +10,22 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.inquirie;
+package acme.features.entrepreneur.application;
 
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.inquiries.Inquirie;
+import acme.entities.applications.Application;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuthenticatedInquirieRepository extends AbstractRepository {
+public interface EntrepreneurApplicationRepository extends AbstractRepository {
 
-	@Query("select i from Inquirie i where i.id = ?1")
-	Inquirie findOneById(int id);
+	@Query("select a from Application a where a.id = ?1")
+	Application findOneById(int id);
 
-	@Query("select i from Inquirie i where i.creationMoment > CURRENT_TIMESTAMP")
-	Collection<Inquirie> findMany();
-
+	@Query("select a from Application a where a.investor.id = ?1")
+	Collection<Application> findManyByInvestorId(int eId);
 }
