@@ -32,7 +32,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "totalNumberOftTechnologiesGroupedByActivitySector", "ratioOfOpenSourceTechnologies", "totalNumberOfToolsGroupedByActivitySector", "ratioOfOpenSourceToolsVersusClosedSourceTools", "totalTools", "totalTechnologies");
+		request.unbind(entity, model, "totalNumberOftTechnologiesGroupedByActivitySector", "ratioOfOpenSourceTechnologies", "totalNumberOfToolsGroupedByActivitySector", "ratioOfOpenSourceToolsVersusClosedSourceTools", "totalTools", "totalTechnologies",
+			"ratioOfInvestmentRoundsGroupedByKind", "ratioOfApplicationsGroupedByStatus", "totalApplications");
 
 	}
 
@@ -46,6 +47,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Collection<Object[]> ratioOfOpenSourceToolsVersusClosedSourceTools = this.repository.ratioOfOpenSourceToolsVersusClosedSourceTools();
 		Double totalTools = this.repository.totalTools();
 		Double totalTechnologies = this.repository.totalTechnologies();
+		Double totalApplications = this.repository.totalApplications();
+		Collection<Object[]> ratioOfInvestmentRoundsGroupedByKind = this.repository.ratioOfInvestmentRoundsGroupedByKind();
+		Collection<Object[]> ratioOfApplicationsGroupedByStatus = this.repository.ratioOfApplicationsGroupedByStatus();
 
 		Dashboard result = new Dashboard();
 		result.setTotalNumberOftTechnologiesGroupedByActivitySector(totalNumberOftTechnologiesGroupedByActivitySector);
@@ -54,6 +58,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setRatioOfOpenSourceTechnologies(ratioOfOpenSourceTechnologies);
 		result.setTotalTools(totalTools);
 		result.setTotalTechnologies(totalTechnologies);
+		result.setTotalApplications(totalApplications);
+		result.setRatioOfInvestmentRoundsGroupedByKind(ratioOfInvestmentRoundsGroupedByKind);
+		result.setRatioOfApplicationsGroupedByStatus(ratioOfApplicationsGroupedByStatus);
 
 		return result;
 

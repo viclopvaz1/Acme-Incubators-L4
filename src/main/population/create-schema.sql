@@ -31,7 +31,9 @@
         `money_offer_amount` double precision,
         `money_offer_currency` varchar(255),
         `statement` varchar(255),
+        `status` varchar(255),
         `ticker` varchar(255),
+        `investment_round_id` integer not null,
         `investor_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -147,7 +149,7 @@
         `creation_moment` datetime(6),
         `description` varchar(1024),
         `more_info` varchar(255),
-        `round` integer,
+        `round` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
         `entrepreneur_id` integer not null,
@@ -310,6 +312,11 @@
        add constraint FK_6lnbc6fo3om54vugoh8icg78m 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `application` 
+       add constraint `FKk5ibe41quxsif8im882xv4afo` 
+       foreign key (`investment_round_id`) 
+       references `investment_round` (`id`);
 
     alter table `application` 
        add constraint `FKl4fp0cd8c008ma79n6w58xhk9` 
