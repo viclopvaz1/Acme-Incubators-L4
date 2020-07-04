@@ -57,4 +57,13 @@ public interface AdministratorStatisticsRepository extends AbstractRepository {
 	@Query("select stddev(minMoney.amount) from Overture o where o.deadline >= current_date")
 	Double stDevMinActiveOverture();
 
+	@Query("select avg(select count(a) from InvestmentRound a where a.entrepreneur.id = e.id) from Entrepreneur e")
+	Double averageNumberOfInvestmentRoundsPerEntrepreneur();
+
+	@Query("select avg(select count(a) from Application a where exists(select j from InvestmentRound j where j.entrepreneur.id = e.id)) from Entrepreneur e")
+	Double averageNumberOfApplicationsPerEntrepreneur();
+
+	@Query("select avg(select count(a) from Application a where a.investor.id = e.id) from Investor e")
+	Double averageNumberOfApplicationPerInvestor();
+
 }

@@ -42,7 +42,20 @@
 <div>
 	<canvas id="canvas4"></canvas>
 </div>
-
+</br>
+<h2>
+	<acme:message code="administrator.dashboard.form.message5"/>
+</h2>
+<div>
+	<canvas id="canvas5"></canvas>
+</div>
+</br>
+<h2>
+	<acme:message code="administrator.dashboard.form.message6"/>
+</h2>
+<div>
+	<canvas id="canvas6"></canvas>
+</div>
 <script type="text/javascript">	
 	$(document).ready(function() {
 		var data = {
@@ -261,3 +274,113 @@
 			
 	});
 </script>
+
+<script type="text/javascript">	
+	$(document).ready(function() {
+		var data = {
+				labels: [
+					<jstl:forEach var="iterator" items="${ratioOfInvestmentRoundsGroupedByKind}">
+						"<jstl:out value="${iterator[0]}"/>" ,
+					</jstl:forEach>
+				],
+				datasets: [
+					{
+						data: [
+							<jstl:forEach var="iterator" items="${ratioOfInvestmentRoundsGroupedByKind}">
+								<jstl:out value="${Math.round((iterator[1] / totalTools)*100)}"/> ,
+							</jstl:forEach>
+						],
+						backgroundColor: [
+					          "#f38b4a",
+					          "#56d798",
+					          "#ff8397",
+					          "#6970d5" 
+					        ],
+					}
+				]
+			};
+		
+		var options = {
+				scales : {
+					yAxes:[
+						{
+							ticks : {
+								suggestedMin : 0.0,
+								suggestedMax : 1.0
+							}
+						}
+					]
+				},
+				legend : {
+					display : false
+				}
+			};
+			
+		var canvas, context;
+			
+		canvas = document.getElementById("canvas5");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+			type: "pie",
+			data: data,
+			options: options
+		});
+			
+	});
+</script>
+
+
+<script type="text/javascript">	
+	$(document).ready(function() {
+		var data = {
+				labels: [
+					<jstl:forEach var="iterator" items="${ratioOfApplicationsGroupedByStatus}">
+						"<jstl:out value="${iterator[0]}"/>" ,
+					</jstl:forEach>
+				],
+				datasets: [
+					{
+						data: [
+							<jstl:forEach var="iterator" items="${ratioOfApplicationsGroupedByStatus}">
+								<jstl:out value="${Math.round((iterator[1] / totalApplications)*100)}"/> ,
+							</jstl:forEach>
+						],
+						backgroundColor: [
+					          "#f38b4a",
+					          "#56d798",
+					          "#ff8397",
+					          "#6970d5" 
+					        ],
+					}
+				]
+			};
+		
+		var options = {
+				scales : {
+					yAxes:[
+						{
+							ticks : {
+								suggestedMin : 0.0,
+								suggestedMax : 1.0
+							}
+						}
+					]
+				},
+				legend : {
+					display : false
+				}
+			};
+			
+		var canvas, context;
+			
+		canvas = document.getElementById("canvas6");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+			type: "pie",
+			data: data,
+			options: options
+		});
+			
+	});
+</script>
+

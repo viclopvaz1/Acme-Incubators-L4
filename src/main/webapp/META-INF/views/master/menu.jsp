@@ -55,6 +55,11 @@
 			<acme:menu-suboption code="master.menu.anonymous2.ruiz-bulletin" action="/anonymous/ruiz-bulletin/create" />
 			<acme:menu-suboption code="master.menu.anonymous2.list-ruiz-bulletin" action="/anonymous/ruiz-bulletin/list" />
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.banner" action="/patron/banner/list-mine" />
+		
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list" />
