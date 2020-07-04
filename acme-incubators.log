@@ -1,0 +1,1 @@
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/acme-incubators].[dispatcherServlet]] at acme.framework.utilities.RememberMeLogoutHandler.logout(RememberMeLogoutHandler.java:31): java.lang.AssertionError
