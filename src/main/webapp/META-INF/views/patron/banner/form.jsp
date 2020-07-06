@@ -22,6 +22,7 @@
 	<acme:form-checkbox code="patron.banner.label.finalMode" path="finalMode"/>
 	<acme:form-textbox code="patron.banner.label.patron" path="patron.identity.fullName"/>
 	
+	<acme:form-submit test="${numCreditCard == 1}" code="patron.banner.form.button.credit-card" action="/patron/credit-card/show?bannerid=${id}"  method="get"/>
 	<acme:form-return code="patron.banner.form.button.return"/>
 
 

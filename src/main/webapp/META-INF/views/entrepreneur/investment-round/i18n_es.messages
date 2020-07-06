@@ -26,4 +26,5 @@ entrepreneur.investment-round.form.label.status = Estado
 entrepreneur.investment-round.list.label.title = Titulo
 entrepreneur.investment-round.list.label.description = Description
 
+entrepreneur.investment-round.form.button.accounting-record = Registro de Contabilidad
 entrepreneur.investment-round.form.button.return= Volver

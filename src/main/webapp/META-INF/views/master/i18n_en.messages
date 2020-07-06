@@ -67,9 +67,9 @@ master.menu.administrator.create-credit-card = Create Credit Card
 master.menu.administrator.list-credit-card = List Credit Card
 master.menu.administrator.create-banner = Create Banner
 master.menu.administrator.list-banner = List Banners
-master.menu.administrator.create-challenge = Create challenge
-master.menu.administrator.create-tool-record = Create tool record
-master.menu.administrator.list-challenge = List challenge
+master.menu.administrator.create-challenge = Create Challenge
+master.menu.administrator.create-tool-record = Create Tool Record
+master.menu.administrator.list-challenge = List Challenge
 master.menu.administrator.list-tool-record = List Tool Record
 master.menu.administrator.create-notice = Create Notice
 master.menu.administrator.inquirie = Inquirie List
@@ -80,10 +80,10 @@ master.menu.authenticated = Authenticated
 master.menu.authenticated.list-notice = List Notices
 master.menu.authenticated.list-technology-record = List Technology Record
 master.menu.authenticated.list-tool-record = List Tool Record
-master.menu.authenticated.list-inquirie = List inquiries
-master.menu.authenticated.list-overture = List overtures
-master.menu.authenticated.list-challenge = List challenges
-master.menu.authenticated.list-investment-round = List investment round
+master.menu.authenticated.list-inquirie = List Inquiries
+master.menu.authenticated.list-overture = List Overtures
+master.menu.authenticated.list-challenge = List Challenges
+master.menu.authenticated.list-investment-round = List Investment Round
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
@@ -92,10 +92,18 @@ master.menu.provider.favourite-link = Favourite link
 # master.menu.entrepreneur ##########################################################
 master.menu.entrepreneur = Entrepreneur
 master.menu.entrepreneur.investment-round.list = List of Investment Round
+master.menu.entrepreneur.forum.list = List of Forums
 
 # master.menu.investor ##########################################################
 master.menu.investor= Investor
 master.menu.investor.application.list-mine =  List of Applications
+master.menu.investor.forum.list-mine = List of Forums
+
+# master.menu.bookkeeper ##########################################################
+master.menu.bookkeeper= Bookkeeper
+master.menu.bookkeeper.accounting-record.list-mine =  List of Accounting Record
+master.menu.bookkeeper.investment-round.list-mine =  List of Investment Round with Account Record
+master.menu.bookkeeper.investment-round.list-no-mine =  List of Investment Round without Accounting Record
 
 
 # master.menu.consumer ##########################################################

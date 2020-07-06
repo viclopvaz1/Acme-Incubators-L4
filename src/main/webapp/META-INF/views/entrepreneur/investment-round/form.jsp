@@ -27,5 +27,6 @@
 		<acme:form-checkbox code="entrepreneur.investment-round.form.label.status" path="status"/>
 	
 	
+	<acme:form-submit test="${status == true && numAccountingRecord > 0}" code="entrepreneur.investment-round.form.button.accounting-record" action="/entrepreneur/accounting-record/list-mine?investmentRoundid=${id}"  method="get"/>
 	<acme:form-return code="entrepreneur.investment-round.form.button.return"/>
 </acme:form>

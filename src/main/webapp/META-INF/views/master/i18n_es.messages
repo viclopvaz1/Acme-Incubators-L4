@@ -86,7 +86,7 @@ master.menu.authenticated.list-tool-record = Lista de Registro de Herramienta
 master.menu.authenticated.list-inquirie = Lista de Consultas
 master.menu.authenticated.list-overture = Lista de Peticiones
 master.menu.authenticated.list-challenge = Lista de Retos
-master.menu.authenticated.list-investment-round = Lista de ronda de inversiones
+master.menu.authenticated.list-investment-round = Lista de Ronda de Inversiones
 
 # master.menu.provider ########################################################
 
@@ -100,11 +100,19 @@ master.menu.consumer.favourite-link = Enlace favorito
 
 # master.menu.entrepreneur ##########################################################
 master.menu.entrepreneur = Empresario
-master.menu.entrepreneur.investment-round.list = Lista de rondas de inversiones
+master.menu.entrepreneur.investment-round.list = Lista de Rondas de Inversiones
+master.menu.entrepreneur.forum.list = Lista de Foros
 
 # master.menu.investor ##########################################################
 master.menu.investor= Inversor
-master.menu.investor.application.list-mine =  Lista de aplicaciones
+master.menu.investor.application.list-mine =  Lista de Aplicaciones
+master.menu.investor.forum.list-mine = Lista de Foros
+
+# master.menu.bookkeeper ##########################################################
+master.menu.bookkeeper= Bookkeeper
+master.menu.bookkeeper.accounting-record.list-mine =  Lista de Registro de Contabilidad
+master.menu.bookkeeper.investment-round.list-mine =  Lista de Rondas de Inversiones con Registro de Contabilidad
+master.menu.bookkeeper.investment-round.list-no-mine =  Lista de Rondas de Inversiones sin Registro de Contabilidad
 
 # master.menu.user-account ####################################################
 

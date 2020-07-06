@@ -6,7 +6,8 @@
         `money_offer` varchar(1024),
         `status` bit not null,
         `title` varchar(255),
-        `investor_id` integer not null,
+        `bookkeeper_id` integer not null,
+        `investment_round_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -49,7 +50,6 @@
        `id` integer not null,
         `version` integer not null,
         `final_mode` bit not null,
-        `num_credit_card` integer not null,
         `picture` varchar(255),
         `slogan` varchar(255),
         `target_url` varchar(255),
@@ -126,6 +126,14 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `forum` (
+       `id` integer not null,
+        `version` integer not null,
+        `title` varchar(255),
+        `investment_round_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `inquirie` (
        `id` integer not null,
         `version` integer not null,
@@ -164,6 +172,17 @@
         `name` varchar(255),
         `profile` varchar(255),
         `sector` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(1024),
+        `creation_moment` datetime(6),
+        `tags` varchar(1024),
+        `title` varchar(255),
+        `forum_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -300,9 +319,14 @@
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
 
     alter table `accounting_record` 
-       add constraint `FKj2bdai7wu5kc17dlturjf414p` 
-       foreign key (`investor_id`) 
-       references `investor` (`id`);
+       add constraint `FK41jm4vk7runvmg5tderffrele` 
+       foreign key (`bookkeeper_id`) 
+       references `bookkeeper` (`id`);
+
+    alter table `accounting_record` 
+       add constraint `FKk1pmfnppwk0kav7xloy8u71uq` 
+       foreign key (`investment_round_id`) 
+       references `investment_round` (`id`);
 
     alter table `administrator` 
        add constraint FK_2a5vcjo3stlfcwadosjfq49l1 
@@ -354,6 +378,11 @@
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `forum` 
+       add constraint `FKq8ggcjgl5by5gf6l5bji632hu` 
+       foreign key (`investment_round_id`) 
+       references `investment_round` (`id`);
+
     alter table `investment_round` 
        add constraint `FKkj1l8c2ftn9c65y061me6t37j` 
        foreign key (`entrepreneur_id`) 
@@ -363,6 +392,11 @@
        add constraint FK_dcek5rr514s3rww0yy57vvnpq 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `message` 
+       add constraint `FKfwwpivgx5j4vw4594dgrw884q` 
+       foreign key (`forum_id`) 
+       references `forum` (`id`);
 
     alter table `patron` 
        add constraint FK_8xx5nujhuio3advxc2freyu65 

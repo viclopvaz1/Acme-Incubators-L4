@@ -34,7 +34,6 @@
 		<property name="slogan" value="Yo soy del betis también" />
 		<property name="targetUrl" value="https://www.realbetisbalompie.es/" />
 		<property name="finalMode" value="true" />
-		<property name="numCreditCard" value="1" />
 		<property name="patron" ref="patron1Patron" />
 	</bean>
 
@@ -484,7 +483,7 @@
      </bean>
 
      <bean name="investmentRound02" class="acme.entities.investmentrounds.InvestmentRound">
-        <property name="ticker" value="SEC-20-000000" />
+        <property name="ticker" value="SEC-20-000001" />
         <property name="creationMoment" value="2020/06/06 00:00" />
         <property name="round" value="SERIESA" />
         <property name="title" value="Title 2" />
@@ -496,7 +495,7 @@
     </bean>
     
     <bean name="investmentRound03" class="acme.entities.investmentrounds.InvestmentRound">
-        <property name="ticker" value="SEC-20-000000" />
+        <property name="ticker" value="SEC-20-000002" />
         <property name="creationMoment" value="2020/06/06 00:00" />
         <property name="round" value="SERIESA" />
         <property name="title" value="Title 3" />
@@ -513,7 +512,7 @@
         <property name="statement" value="no contempla" />
         <property name="moneyOffer" value="€ 400" />
         <property name="investor" ref="investor1Investor" />
-        <property name="investmentRound" ref="investmentRound01" />
+        <property name="investmentRound" ref="investmentRound02" />
         <property name="status" value="pending" />
     </bean>
 
@@ -524,6 +523,71 @@
         <property name="moneyOffer" value="€ 400" />
         <property name="investor" ref="investor2Investor" />
         <property name="investmentRound" ref="investmentRound02" />
-        <property name="status" value="rejected" />
+        <property name="status" value="accepted" />
     </bean>
+    
+    <bean name="application3" class="acme.entities.applications.Application">
+        <property name="ticker" value="SEC-20-000002" />
+        <property name="creationMoment" value="2019/12/01 10:00" />
+        <property name="statement" value="sin especificacion" />
+        <property name="moneyOffer" value="€ 400" />
+        <property name="investor" ref="investor2Investor" />
+        <property name="investmentRound" ref="investmentRound03" />
+        <property name="status" value="accepted" />
+    </bean>
+    
+    <bean name="accountingrecord01" class="acme.entities.accountingrecords.AccountingRecord">
+        <property name="title" value="Title 1" />
+        <property name="status" value="true" />
+        <property name="creationMoment" value="2020/06/01 10:00" />
+        <property name="moneyOffer" value="€ 400" />
+        <property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
+        <property name="investmentRound" ref="investmentRound02" />
+    </bean>
+    
+    <bean name="accountingrecord02" class="acme.entities.accountingrecords.AccountingRecord">
+        <property name="title" value="Title 2" />
+        <property name="status" value="true" />
+        <property name="creationMoment" value="2020/06/01 10:00" />
+        <property name="moneyOffer" value="€ 500" />
+        <property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
+        <property name="investmentRound" ref="investmentRound02" />
+    </bean>
+    
+    <bean name="forum01" class="acme.entities.forums.Forum">
+        <property name="title" value="Title 1" />
+        <property name="investmentRound" ref="investmentRound02" />
+    </bean>
+    
+    <bean name="forum02" class="acme.entities.forums.Forum">
+        <property name="title" value="Title 2" />
+        <property name="investmentRound" ref="investmentRound03" />
+    </bean>
+    
+    <bean name="message01" class="acme.entities.messages.Message">
+        <property name="title" value="Title 1" />
+        <property name="creationMoment" value="2020/06/01 10:00" />
+        <property name="tags" value="tag1, tag2" />
+        <property name="body" value="Example" />
+        <property name="forum" ref="forum01" />
+    </bean>
+    
+    <bean name="message02" class="acme.entities.messages.Message">
+        <property name="title" value="Title 2" />
+        <property name="creationMoment" value="2020/06/01 10:00" />
+        <property name="tags">
+        		<null />
+        </property>
+        <property name="body" value="Example" />
+        <property name="forum" ref="forum01" />
+    </bean>
+    
+    <bean name="message03" class="acme.entities.messages.Message">
+        <property name="title" value="Title 3" />
+        <property name="creationMoment" value="2020/06/01 10:00" />
+        <property name="tags" value="tag1, tag2" />
+        <property name="body" value="Example" />
+        <property name="forum" ref="forum02" />
+    </bean>
+    
 </beans>

@@ -34,8 +34,6 @@ public class Banner extends DomainEntity {
 
 	private boolean				finalMode;
 
-	private int					numCreditCard;
-
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
