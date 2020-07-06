@@ -45,7 +45,7 @@ public class EntrepreneurApplicationListMineService implements AbstractListServi
 		Principal principal;
 
 		principal = request.getPrincipal();
-		result = this.repository.findManyByInvestorId(principal.getActiveRoleId());
+		result = this.repository.findManyByEntrepreneurId(principal.getActiveRoleId());
 
 		return result;
 	}

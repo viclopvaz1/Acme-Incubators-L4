@@ -92,6 +92,7 @@ master.menu.provider.favourite-link = Favourite link
 # master.menu.entrepreneur ##########################################################
 master.menu.entrepreneur = Entrepreneur
 master.menu.entrepreneur.investment-round.list = List of Investment Round
+master.menu.entrepreneur.application.list-mine = List applications
 
 # master.menu.investor ##########################################################
 master.menu.investor= Investor
