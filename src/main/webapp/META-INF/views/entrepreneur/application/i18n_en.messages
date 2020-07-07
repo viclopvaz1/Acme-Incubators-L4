@@ -14,8 +14,7 @@ entrepreneur.application.form.label.moneyOffer = Money Offer
 entrepreneur.application.form.label.creationMoment = Creation Moment
 entrepreneur.application.form.label.statement = Statement
 entrepreneur.application.form.label.investor = Investor
-
-
+entrepreneur.application.form.label.ticker = Investment Round Ticker
 
 entrepreneur.application.list.label.ticker = Ticker
 entrepreneur.application.list.label.creationMoment = Creation Moment

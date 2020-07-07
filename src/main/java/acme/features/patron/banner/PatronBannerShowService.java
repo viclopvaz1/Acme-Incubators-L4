@@ -9,6 +9,7 @@ import acme.entities.roles.Patron;
 import acme.features.patron.creditcard.PatronCreditCardRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -25,7 +26,18 @@ public class PatronBannerShowService implements AbstractShowService<Patron, Bann
 	public boolean authorise(final Request<Banner> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int bannerId;
+		Banner banner;
+		Patron patron;
+		Principal principal;
+
+		bannerId = request.getModel().getInteger("id");
+		banner = this.repository.findOneById(bannerId);
+		patron = banner.getPatron();
+		principal = request.getPrincipal();
+		result = patron.getUserAccount().getId() == principal.getAccountId();
+		return result;
 	}
 
 	@Override

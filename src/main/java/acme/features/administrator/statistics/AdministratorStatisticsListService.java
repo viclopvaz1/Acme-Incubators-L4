@@ -158,20 +158,20 @@ public class AdministratorStatisticsListService implements AbstractListService<A
 		res.add(sd3);
 
 		Statistics av1 = new Statistics();
-		cr.setNombre("Average number of Investment rounds per Entrepreneur");//****************
+		av1.setNombre("Average number of Investment rounds per Entrepreneur");//****************
 		Double prueba = this.repository.averageNumberOfInvestmentRoundsPerEntrepreneur();
-		cr.setValor(prueba);
+		av1.setValor(prueba);
 
 		res.add(av1);
 
 		Statistics av2 = new Statistics();
-		cr.setNombre("Average number of Applications per Entrepreneur");//********************
-		cr.setValor(this.repository.averageNumberOfApplicationsPerEntrepreneur());
+		av2.setNombre("Average number of Applications per Entrepreneur");//********************
+		av2.setValor(this.repository.averageNumberOfApplicationsPerEntrepreneur());
 		res.add(av2);
 
 		Statistics av3 = new Statistics();
-		cr.setNombre("Average number of Applications per Investor");
-		cr.setValor(this.repository.averageNumberOfApplicationPerInvestor());
+		av3.setNombre("Average number of Applications per Investor");
+		av3.setValor(this.repository.averageNumberOfApplicationPerInvestor());
 
 		res.add(av3);
 

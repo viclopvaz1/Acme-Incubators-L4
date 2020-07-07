@@ -21,10 +21,6 @@ public class EntrepreneurApplicationShowService implements AbstractShowService<E
 
 	@Override
 	public boolean authorise(final Request<Application> request) {
-		//		assert request != null;
-		//
-		//		return true;
-
 		assert request != null;
 
 		boolean result;
@@ -48,7 +44,7 @@ public class EntrepreneurApplicationShowService implements AbstractShowService<E
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationMoment", "statement", "moneyOffer", "investor.identity.fullName");
+		request.unbind(entity, model, "ticker", "creationMoment", "statement", "moneyOffer", "investmentRound.ticker", "investor.identity.fullName");
 	}
 
 	@Override

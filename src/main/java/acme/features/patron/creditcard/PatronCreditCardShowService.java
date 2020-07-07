@@ -8,6 +8,7 @@ import acme.entities.creditcards.CreditCard;
 import acme.entities.roles.Patron;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -21,7 +22,18 @@ public class PatronCreditCardShowService implements AbstractShowService<Patron, 
 	public boolean authorise(final Request<CreditCard> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int creditCardId;
+		CreditCard creditCard;
+		Patron patron;
+		Principal principal;
+
+		creditCardId = request.getModel().getInteger("id");
+		creditCard = this.repository.findOneById(creditCardId);
+		patron = creditCard.getBanner().getPatron();
+		principal = request.getPrincipal();
+		result = patron.getUserAccount().getId() == principal.getAccountId();
+		return result;
 	}
 
 	@Override
