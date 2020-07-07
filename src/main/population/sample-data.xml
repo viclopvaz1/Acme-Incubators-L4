@@ -181,7 +181,7 @@
 		<property name="deadline" value="2020/12/01 10:35" />
 		<property name="description" value="This is a example" />
 		<property name="maxMoney" value="700.0€" />
-		<property name="minMoney" value="300.0€" />
+		<property name="minMoney" value="200.0€" />
 		<property name="email" value="aprobado2@hotmail.com" />
 
 	</bean>
@@ -202,8 +202,8 @@
 		<property name="creationMoment" value="2020/04/01 10:35" />
 		<property name="deadline" value="2020/12/01 10:35" />
 		<property name="description" value="This is a example" />
-		<property name="maxMoney" value="700.0€" />
-		<property name="minMoney" value="300.0€" />
+		<property name="maxMoney" value="600.0€" />
+		<property name="minMoney" value="200.0€" />
 		<property name="email" value="aprobado2@hotmail.com" />
 
 	</bean>
