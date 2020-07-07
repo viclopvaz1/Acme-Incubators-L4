@@ -11,8 +11,10 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
-import acme.entities.roles.Investor;
+import acme.entities.investmentrounds.InvestmentRound;
+import acme.entities.roles.Bookkeeper;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,6 +32,7 @@ public class AccountingRecord extends DomainEntity {
 	private boolean				status;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@Past
 	@NotNull
 	private Date				creationMoment;
 
@@ -40,6 +43,11 @@ public class AccountingRecord extends DomainEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Investor			investor;
+	private Bookkeeper			bookkeeper;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private InvestmentRound		investmentRound;
 
 }

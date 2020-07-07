@@ -42,6 +42,9 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		assert entity != null;
 		assert model != null;
 
+		int id = request.getModel().getInteger("id");
+		int numAccountingRecord = this.repository.findAccountingRecordByInvestmentRoundId(id);
+		model.setAttribute("numAccountingRecord", numAccountingRecord);
 		request.unbind(entity, model, "title", "description", "amountMoney", "creationMoment", "round", "ticker", "moreInfo", "entrepreneur.identity.fullName", "status");
 	}
 

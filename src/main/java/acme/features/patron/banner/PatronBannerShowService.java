@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.banners.Banner;
 import acme.entities.roles.Patron;
-import acme.features.administrator.creditcard.AdministratorCreditCardRepository;
+import acme.features.patron.creditcard.PatronCreditCardRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractShowService;
@@ -15,10 +15,10 @@ import acme.framework.services.AbstractShowService;
 public class PatronBannerShowService implements AbstractShowService<Patron, Banner> {
 
 	@Autowired
-	PatronBannerRepository				repository;
+	PatronBannerRepository		repository;
 
 	@Autowired
-	AdministratorCreditCardRepository	creditCardRepository;
+	PatronCreditCardRepository	creditCardRepository;
 
 
 	@Override
@@ -34,11 +34,11 @@ public class PatronBannerShowService implements AbstractShowService<Patron, Bann
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "picture", "slogan", "targetUrl", "finalMode", "numCreditCard", "patron.identity.fullName");
-		//		int id;
-		//		id = request.getModel().getInteger("id");
-		//		int num = this.creditCardRepository.findCreditCardByBannerId(id);
-		//		model.setAttribute("numCreditCard", num);
+		int id = request.getModel().getInteger("id");
+		int numCreditCard = this.creditCardRepository.findCreditCardByBannerId(id);
+		model.setAttribute("numCreditCard", numCreditCard);
+		request.unbind(entity, model, "picture", "slogan", "targetUrl", "finalMode", "patron.identity.fullName");
+
 	}
 
 	@Override
@@ -49,9 +49,9 @@ public class PatronBannerShowService implements AbstractShowService<Patron, Bann
 		int id = request.getModel().getInteger("id");
 		result = this.repository.findOneById(id);
 
-		int num;
-		num = this.creditCardRepository.findCreditCardByBannerId(id);
-		result.setNumCreditCard(num);
+		//		int num;
+		//		num = this.creditCardRepository.findCreditCardByBannerId(id);
+		//		result.setNumCreditCard(num);
 
 		return result;
 	}
