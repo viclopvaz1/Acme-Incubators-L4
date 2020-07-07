@@ -61,7 +61,7 @@ public class AdministratorStatisticsListService implements AbstractListService<A
 
 		res.add(s);
 
-		Statistics cr = new Statistics();
+		Statistics cr = new Statistics();//***************
 		cr.setNombre("Total number of technology records");
 		cr.setValor(this.repository.findTechnologyRecord());
 
@@ -104,9 +104,6 @@ public class AdministratorStatisticsListService implements AbstractListService<A
 		minO.setValor(minV);
 
 		res.add(minO);
-
-		Statistics sdR = new Statistics();
-		sdR.setNombre("Standard derivation of reward's Overture");
 
 		Double avgMaxActiveInquirie = this.repository.avgMaxActiveInquirie();
 		Double avgMinActiveInquirie = this.repository.avgMinActiveInquirie();
@@ -159,6 +156,24 @@ public class AdministratorStatisticsListService implements AbstractListService<A
 		sd3.setNombre("Standard derivation of maxMoney Overture");
 		sd3.setValor(stDevMaxActiveOverture);
 		res.add(sd3);
+
+		Statistics av1 = new Statistics();
+		av1.setNombre("Average number of Investment rounds per Entrepreneur");//****************
+		Double prueba = this.repository.averageNumberOfInvestmentRoundsPerEntrepreneur();
+		av1.setValor(prueba);
+
+		res.add(av1);
+
+		Statistics av2 = new Statistics();
+		av2.setNombre("Average number of Applications per Entrepreneur");//********************
+		av2.setValor(this.repository.averageNumberOfApplicationsPerEntrepreneur());
+		res.add(av2);
+
+		Statistics av3 = new Statistics();
+		av3.setNombre("Average number of Applications per Investor");
+		av3.setValor(this.repository.averageNumberOfApplicationPerInvestor());
+
+		res.add(av3);
 
 		return res;
 
