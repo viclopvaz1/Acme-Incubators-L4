@@ -23,13 +23,13 @@ public class PatronCreditCardShowService implements AbstractShowService<Patron, 
 		assert request != null;
 
 		boolean result;
-		int creditCardId;
+		int bannerId;
 		CreditCard creditCard;
 		Patron patron;
 		Principal principal;
 
-		creditCardId = request.getModel().getInteger("id");
-		creditCard = this.repository.findOneById(creditCardId);
+		bannerId = request.getModel().getInteger("bannerid");
+		creditCard = this.repository.findOneByBannerId(bannerId);
 		patron = creditCard.getBanner().getPatron();
 		principal = request.getPrincipal();
 		result = patron.getUserAccount().getId() == principal.getAccountId();
