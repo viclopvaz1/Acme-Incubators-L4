@@ -1,5 +1,5 @@
 /*
- * AuthenticatedProviderRepository.java
+ * EntrepreneurProviderRepository.java
  *
  * Copyright (c) 2019 Rafael Corchuelo.
  *
@@ -10,26 +10,22 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.investmentround;
+package acme.features.authenticated.workprogramme;
 
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.investmentrounds.InvestmentRound;
+import acme.entities.workprogrammes.WorkProgramme;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuthenticatedInvestmentRoundRepository extends AbstractRepository {
+public interface AuthenticatedWorkProgrammeRepository extends AbstractRepository {
 
-	@Query("select i from InvestmentRound i where i.id = ?1")
-	InvestmentRound findOneById(int id);
+	@Query("select wp from WorkProgramme wp where wp.id = ?1")
+	WorkProgramme findOneById(int id);
 
-	@Query("select i from InvestmentRound i where i.status =1")
-	Collection<InvestmentRound> findMany();
-
-	@Query("select count(ar) from AccountingRecord ar where ar.investmentRound.id = ?1")
-	int findAccountingRecordByInvestmentRoundId(int investmentRoundId);
-
+	@Query("select wp from WorkProgramme wp where wp.investmentRound.id = ?1")
+	Collection<WorkProgramme> findManyByInvestmentRoundId(int investmentRoundId);
 }

@@ -505,6 +505,22 @@
         <property name="entrepreneur" ref="entrepreneur2Entrepreneur" />
         <property name="status" value="true" />
     </bean>
+    
+    <bean name="workProgramme01" class="acme.entities.workprogrammes.WorkProgramme">
+        <property name="title" value="Title 1" />
+        <property name="creationMoment" value="2020/06/06 00:00" />
+        <property name="deadline" value="2020/09/06 00:00" />
+        <property name="budget" value="€ 400" />
+        <property name="investmentRound" ref="investmentRound02" />
+    </bean>
+    
+    <bean name="workProgramme02" class="acme.entities.workprogrammes.WorkProgramme">
+        <property name="title" value="Title 2" />
+        <property name="creationMoment" value="2020/06/06 00:00" />
+        <property name="deadline" value="2020/09/06 00:00" />
+        <property name="budget" value="€ 600" />
+        <property name="investmentRound" ref="investmentRound03" />
+    </bean>
 
     <bean name="application1" class="acme.entities.applications.Application">
         <property name="ticker" value="SEC-20-000000" />

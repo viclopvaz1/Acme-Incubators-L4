@@ -22,5 +22,6 @@ entrepreneur.investment-round.form.label.status = Status
 entrepreneur.investment-round.list.label.title = Title
 entrepreneur.investment-round.list.label.description = Description
 
+entrepreneur.investment-round.form.button.work-programme = Work Programme
 entrepreneur.investment-round.form.button.accounting-record = Accounting Record
 entrepreneur.investment-round.form.button.return = Return
