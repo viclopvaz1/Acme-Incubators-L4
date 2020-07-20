@@ -10,11 +10,11 @@
 
 	<import resource="conversion-service.xml" />
 
+
 	<bean id="configuration01" class="acme.entities.configurations.Configuration">
 		<property name="spamWords"
-			value=" viagra, sex, 
-			cialis, hard_core, cialis, nigeria, you’ve won, million dollar, 
-				millon de dolares, has ganado, explícito, sexo"></property>
+			value="sex,sexo,hardcore,viagra,cialis,Nigeria,you've won,has ganado,million dolar,un millon de dólares,explícito"
+			></property>
 		<property name="spamThreshold" value="2.50" />
 		<property name="sectors" value="Technology, Science, Arts, Business"></property>
 	</bean>
@@ -208,13 +208,14 @@
 	</bean>
 
 
-	<bean id="Challenge01" class="acme.entities.challenges.Challenge">
+
+<bean id="Challenge01" class="acme.entities.challenges.Challenge">
 		<property name="title" value="Desafio 1 " />
-		<property name="rookieGoal" value="400.0€" />
+		<property name="rookieGoal" value="Objetivo 1" />
 		<property name="deadline" value="2020/12/01 10:35" />
 		<property name="description" value="This is a example" />
-		<property name="averageGoal" value="700.0€" />
-		<property name="expertGoal" value="300.0€" />
+		<property name="averageGoal" value="Objetivo 2" />
+		<property name="expertGoal" value="Objetivo 3" />
 		<property name="rookieReward" value="300.0€" />
 		<property name="averageReward" value="1500.0€" />
 		<property name="expertReward" value="300.0€" />
@@ -224,11 +225,11 @@
 
 	<bean id="Challenge02" class="acme.entities.challenges.Challenge">
 		<property name="title" value="Desafio 2" />
-		<property name="rookieGoal" value="400.0€" />
+		<property name="rookieGoal" value="Objetivo 1" />
 		<property name="deadline" value="2020/12/01 10:35" />
 		<property name="description" value="This is a example" />
-		<property name="averageGoal" value="700.0€" />
-		<property name="expertGoal" value="300.0€" />
+		<property name="averageGoal" value="Objetivo 2" />
+		<property name="expertGoal" value="Objetivo 3" />
 		<property name="rookieReward" value="200.0€" />
 		<property name="averageReward" value="1500.0€" />
 		<property name="expertReward" value="300.0€" />
