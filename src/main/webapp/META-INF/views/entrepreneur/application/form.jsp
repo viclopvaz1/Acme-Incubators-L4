@@ -20,7 +20,7 @@
 	<acme:form-moment code="entrepreneur.application.form.label.creationMoment" path="creationMoment"/>
 	<acme:form-textbox code="entrepreneur.application.form.label.statement" path="statement"/>
 	<acme:form-textbox code="entrepreneur.application.form.label.moneyOffer" path="moneyOffer"/>
-	<acme:form-textbox code="entrepreneur.application.form.label.ticker" path="investmentRound.ticker"/>
+	<acme:form-textbox code="entrepreneur.application.form.label.tickerInvestmentRound" path="investmentRound.ticker"/>
 	<acme:form-textbox code="entrepreneur.application.form.label.investor" path="investor.identity.fullName"/>
 		
 	
