@@ -14,7 +14,7 @@ investor.application.form.label.moneyOffer = Oferta de dinero
 investor.application.form.label.creationMoment = Fecha de creacion
 investor.application.form.label.statement = Declaración
 investor.application.form.label.investor = Inversor
-investor.application.form.label.ticker = Ticker de la Ronda de Inversion
+investor.application.form.label.tickerInvestmentRound = Ticker de la Ronda de Inversion
 
 
 investor.application.list.label.ticker = Ticker

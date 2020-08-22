@@ -14,7 +14,7 @@ investor.application.form.label.moneyOffer = Money Offer
 investor.application.form.label.creationMoment = Creation Moment
 investor.application.form.label.statement = Statement
 investor.application.form.label.investor = Investor
-investor.application.form.label.ticker = Investment Round Ticker
+investor.application.form.label.tickerInvestmentRound = Investment Round Ticker
 
 
 investor.application.list.label.ticker = Ticker
